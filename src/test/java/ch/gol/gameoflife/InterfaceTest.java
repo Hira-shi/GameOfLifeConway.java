@@ -2,18 +2,40 @@ package ch.gol.gameoflife;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class InterfaceTest {
 
+
     @Test
-    void testOnHelloButtonClick() {
-        // Create an instance of the GameInterface class
+    public void testNextGeneration() {
+        Interface gameInterface = new Interface();
+        protected int generation = 0;
+        gameInterface.nextGeneration();
+        assertTrue(gameInterface.generation == 1);
+    }
+
+    @Test
+    public void testCellClicked() {
         Interface gameInterface = new Interface();
 
-        // Call the method to be tested
-        gameInterface.onHelloButtonClick();
-
-        // Add assertions to verify the expected behavior
-        // For example, you can check if the welcomeText label was updated correctly
-        // assertEquals("Welcome to JavaFX Application!", gameInterface.getWelcomeText());
+        gameInterface.CellClicked(0, 0);
     }
+
+    @Test
+    public void testIsCellAlive() {
+        Interface gameInterface = new Interface();
+
+        gameInterface.CellClicked(0, 0);
+        assertTrue(gameInterface.IsCellAlive(0, 0));
+
+        gameInterface.CellClicked(5, 0);
+        assertFalse(gameInterface.IsCellAlive(5, 1));
+    }
+
+
+    // TEST for having an infinite map
+    // On going ...
+
 }

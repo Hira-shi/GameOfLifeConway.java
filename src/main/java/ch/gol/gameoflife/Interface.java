@@ -4,11 +4,16 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 public class Interface {
-    @FXML
-    private Label welcomeText;
+    protected int generation = 0;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    protected void beginGame() {
+
     }
+
+    @FXML
+    protected void endGame(){
+
+    }
+
 }
