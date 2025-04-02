@@ -13,9 +13,10 @@ public class UITest {
     @Test
     public void testResetButton() {
         Interface gameInterface = new Interface();
+        UI ui = new UI();
 
         gameInterface.CellClicked(0, 0);
-        gameInterface.resetButton();
+        ui.resetButton();
         assertFalse(gameInterface.IsCellAlive(0, 0));
     }
 
@@ -39,6 +40,7 @@ public class UITest {
     @Test
     public void testStartButton() {
         Interface gameInterface = new Interface();
+        UI ui = new UI();
 
     }
 
